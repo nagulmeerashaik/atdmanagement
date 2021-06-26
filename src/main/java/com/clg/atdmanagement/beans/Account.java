@@ -1,8 +1,11 @@
 package com.clg.atdmanagement.beans;
 
 import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.SequenceGenerator;
 
 import lombok.Data;
 import lombok.Getter;
@@ -16,6 +19,7 @@ public class Account {
     @Column
     @Getter
     @Setter
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     protected int id;
 
     @Column
@@ -41,10 +45,10 @@ public class Account {
     @Column
     @Getter
     @Setter
-    protected String gender;
+    protected Gender gender;
 
     @Column
     @Getter
     @Setter
-    protected String accountType;
+    protected AccountType accountType;
 }
